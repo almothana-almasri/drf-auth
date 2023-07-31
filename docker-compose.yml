@@ -1,10 +1,9 @@
-
 version: '3'
 
 services:
   web:
     build: .
-    command: gunicorn auth_things_api.wsgi:application --bind 0.0.0.0:8000 --workers 4
+    command: gunicorn TaskMaster.wsgi:application --bind 0.0.0.0:8000 --workers 4
     volumes:
       - .:/code
     ports:
